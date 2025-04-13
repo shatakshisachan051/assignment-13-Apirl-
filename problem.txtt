@@ -1,0 +1,42 @@
+You’ve been hired by a recruitment startup that wants to evaluate frontend candidates based on their ability to debug code and understand state transitions.
+
+You are to build BugTracker Pro, an internal debugging simulator where:
+
+Recruiters can upload error logs (JSON) from developer projects.
+The system lets them filter, search, and trace issues based on time, severity, and developer ID.
+Behind the scenes, you must use Redux for global state, and useReducer for local state in the filtering UI.
+Developers can search logs using abstract binary search (on timestamps or severity rankings).
+🧪 Core Features to Build:
+🔍 Error Log Viewer
+Accepts JSON logs like:
+
+[
+  { "id": 1, "timestamp": 1710000034, "severity": "high", "message": "Unhandled promise", "devId": "DEV1001" },
+  ...
+]
+
+Show them in a styled table (Chakra UI) with filters by:
+
+Severity
+Developer
+Time range
+🚀 Abstract Binary Search
+Write a generic, abstract binary search function that can:
+Be reused across the app
+Search either by timestamp or severity rank (low < medium < high < critical)
+Accept a custom comparator
+🔄 State Management
+Use Redux to store:
+The original logs
+The active log view
+Current recruiter session
+Use useReducer to manage:
+Complex filter UI state
+Multi-step filtering flows
+🧭 Routing
+/upload → JSON upload and validation
+/logs → Table with filtering
+/search/:devId → Logs by individual developer
+🎨 UI
+Use Chakra UI
+Responsive layout with accessible filters and navigation
