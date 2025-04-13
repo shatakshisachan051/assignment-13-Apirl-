@@ -25,7 +25,7 @@ import {
                     <Table variant="simple">
             <Thead>
                 <Tr>
-                    <Th>IID</Th>
+                    <Th>ID</Th>
                     <Th>Timestamp</Th>
                     <Th>Severity</Th>
                     <Th>Message</Th>
