@@ -6,7 +6,8 @@ import {
   Input,
   VStack,
   Table,
-  TableBody,
+  Tbody,
+  Thread,
   Tr,
   Th,
   Td,
@@ -14,7 +15,7 @@ import {
   Select,
 } from "@chakra-ui/react";
 import { filterReducer, initialFilterState } from "../reducers/filterReducer";
-import { filerLogs } from "../features/logs/logsSlice";
+import { filterLogs } from "../features/logs/logsSlice";
 
 function LogsPage() {
   let [state, dispatchLocal] = useReducer(filterReducer, initialFilterState);
@@ -28,11 +29,11 @@ function LogsPage() {
         (!state.severity || log.severity === state.severity) &&
         (!state.devId || log.devId === state.devId) &&
         log.timestamp >= state.timeRange.from &&
-        log.timestamp >= state.timeRange.to
+        log.timestamp <= state.timeRange.to
       );
     });
 
-    dispatchRedux(filerLogs(result));
+    dispatchRedux(filterLogs(result));
   }
 
   return (
@@ -42,7 +43,7 @@ function LogsPage() {
           <Select
             placeholder="Severity"
             onChange={(e) =>
-              dispatchLocal({ type: "SET_SEVERIITY", payload: e.target.value })
+              dispatchLocal({ type: "SET_SEVERITY", payload: e.target.value })
             }
           >
             <option value="low">Low</option>
