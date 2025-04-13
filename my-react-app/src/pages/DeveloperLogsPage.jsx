@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom"
-import { UseSelector, useSelector } from "react-redux"
+import { useSelector} from "react-redux"
 import {
     Box,
     Button,
@@ -13,7 +13,7 @@ import {
     Td,
     HStack,
     Select,
-  } from "@chakra-ui/react";
+  } from '@chakra-ui/react';
 
   function DeveloperLogsPage(){
     let {devId} = useParams()

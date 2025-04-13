@@ -14,7 +14,7 @@ import {
   Td,
   HStack,
   Select,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import { filterReducer, initialFilterState } from "../reducers/filterReducer";
 import { filterLogs } from "../features/logs/logsSlice";
 
