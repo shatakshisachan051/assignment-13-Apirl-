@@ -7,7 +7,7 @@ import {
   VStack,
   Table,
   Tbody,
-  Thread,
+  Thead,
   Tr,
   Th,
   Td,
@@ -61,7 +61,7 @@ function LogsPage() {
         </HStack>
 
         <Table variant="striped">
-            <Thread>
+            <Thead>
                 <Tr>
                     <Th>IID</Th>
                     <Th>Timestamp</Th>
@@ -69,7 +69,7 @@ function LogsPage() {
                     <Th>Message</Th>
                     <Th>Dev ID</Th>
                 </Tr>
-            </Thread>
+            </Thead>
             <Tbody>
                 {filteredLogs.map((log)=>(
                     <Tr key={log.id}>

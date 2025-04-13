@@ -6,7 +6,8 @@ import {
     Input,
     VStack,
     Table,
-    TableBody,
+    Tbody,
+    Thead,
     Tr,
     Th,
     Td,
@@ -22,7 +23,7 @@ import {
     return (
         <Box p={6}>
                     <Table variant="simple">
-            <Thread>
+            <Thead>
                 <Tr>
                     <Th>IID</Th>
                     <Th>Timestamp</Th>
@@ -30,7 +31,7 @@ import {
                     <Th>Message</Th>
                     <Th>Dev ID</Th>
                 </Tr>
-            </Thread>
+            </Thead>
             <Tbody>
                 {userLogs.map((log)=>(
                     <Tr key={log.id}>
