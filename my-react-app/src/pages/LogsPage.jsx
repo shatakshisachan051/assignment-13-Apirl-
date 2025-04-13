@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { binarySearch, compareBySeverity } from "../features/logs/logUtils";
 import {
   Box,
   Button,
